@@ -1,0 +1,19 @@
+"""
+EXAMPLE TYPE
+"""
+type User {
+  id: ID! @id
+  name: String!
+  password: String!
+  email: String! @unique
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+"""
+ADD_YOUR_TYPES_HERE
+FOR RELATIONS CHECK PRISMA DOCUMENTATION
+"""
+
+
+

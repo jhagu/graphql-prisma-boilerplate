@@ -1,0 +1,52 @@
+{
+  "name": "graphql-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon src/index.js --ext js,graphql --exec babel-node --inspect-brk",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
+    "prisma:deploy:dev": "cd prisma && prisma deploy -e ../config/dev.env",
+    "prisma:deploy:test": "cd prisma && prisma deploy -e ../config/test.env",
+    "prisma:token": "cd prisma && prisma token -e ../config/test.env",
+    "test": "env-cmd -f ./config/test.env jest --runInBand --detectOpenHandles"
+  },
+  "jest": {
+    "globalSetup": "./tests/config/globalSetup.js",
+    "globalTeardown": "./tests/config/globalTeardown.js"
+  },
+  "author": "Juan Agu",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link": "^1.2.13",
+    "apollo-link-error": "^1.1.12",
+    "apollo-link-http": "^1.5.16",
+    "apollo-link-ws": "^1.0.19",
+    "apollo-utilities": "^1.3.3",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.0",
+    "cross-fetch": "^3.0.4",
+    "graphql": "^14.6.0",
+    "graphql-yoga": "^1.18.3",
+    "jest": "^25.2.4",
+    "jsonwebtoken": "^8.5.1",
+    "prisma-binding": "^2.3.16",
+    "subscriptions-transport-ws": "^0.9.16"
+  }
+}
